@@ -18,3 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('/estudiante', [EstudianteController::class, 'index'])->name('estudiante.index');
+Route::get('/estudiante/create', [EstudianteController::class, 'create'])->name('estudiante.create');
+Route::post('/store', [EstudianteController::class, 'store'])->name('estudiante.store');
+Route::get('/edit/{id}', [EstudianteController::class, 'edit'])->name('paciente.edit');
+Route::put('/update/{id}', [EstudianteController::class, 'update'])->name('paciente.update');
+Route::delete('/destroy/{id}', [EstudianteController::class, 'destroy'])->name('paciente.destroy');

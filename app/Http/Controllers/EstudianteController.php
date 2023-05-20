@@ -16,13 +16,22 @@ class EstudianteController extends Controller
 
     public function create()
     {
-        //
+        return view("estudiante.new");
     }
 
 
     public function store(Request $request)
     {
-        //
+        $estudiantes = new Estudiante();
+        $estudiantes-> id = $request->post('id');
+        $estudiantes-> name = $request->post('name');
+        $estudiantes-> last_name = $request->post('last_name');
+        $estudiantes-> carrera_id = $request->post('carrera_id');
+        $estudiantes-> Num = $request->post('Num');
+        $estudiantes-> email = $request->post('email');
+        $estudiantes->save();
+
+        return redirect()->route("estudiante.index");
     }
 
 
