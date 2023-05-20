@@ -9,4 +9,5 @@ class carrera extends Model
 {
     use HasFactory;
     protected $table = 'carreras';
+
 }

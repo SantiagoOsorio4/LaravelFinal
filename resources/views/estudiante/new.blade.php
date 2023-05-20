@@ -25,7 +25,14 @@
   </div>
   <div class="mb-3">
     <label for="carrera_id" class="form-label">carrera_id</label>
-    <select class="form-select" id=""></select>
+    <select class="form-select" name="carrera_id" aria-label="Default select example">
+  <option selected>Selecciona la carrera</option>
+    @foreach ($carreras as $id => $nombre)
+        <option value="{{ $id }}">{{ $nombre }}</option>
+    @endforeach
+
+</select>
+
   </div>
   
   <div class="mb-3">

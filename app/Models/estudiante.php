@@ -9,4 +9,11 @@ class estudiante extends Model
 {
     use HasFactory;
     protected $table = 'estudiantes';
+
+    public function carrera()
+    {
+        return $this->belongsTo(Carrera::class, 'carrera_id');
+    }
+    
 }
+

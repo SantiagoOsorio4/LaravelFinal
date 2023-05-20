@@ -33,7 +33,7 @@
       <th scope="row">{{$estudiante->id}}</th>
       <td>{{$estudiante->name}}</td>
       <td>{{$estudiante->last_name}}</td>
-      <td>{{$estudiante->carrera_id}}</td>
+      <td>{{$estudiante->carrera->Nom_Car}}</td>
       <td>{{$estudiante->Num}}</td>
       <td>{{$estudiante->email}}</td>
       <td>
