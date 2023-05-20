@@ -15,6 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('last_name');
+            $table->unsignedBigInteger('carrera_id');
+            $table->foreign('carrera_id')
+                  ->references('id')
+                  ->on('carreras')
+                  ->onDelete('cascade');
             $table->integer('Num');
             $table->string('email')->unique();
             $table->timestamps();
