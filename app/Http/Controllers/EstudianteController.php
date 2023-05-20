@@ -43,7 +43,9 @@ class EstudianteController extends Controller
 
     public function edit(string $id)
     {
-        //
+        $estudiante = Estudiante::find($id);
+
+        return view('estudiante.edit', compact('estudiante'));
     }
 
     public function update(Request $request, string $id)
@@ -54,6 +56,8 @@ class EstudianteController extends Controller
 
     public function destroy(string $id)
     {
-        //
+        $estudiante = Estudiante::find($id);
+        $estudiante->delete();
+        return redirect()->route("estudiante.index");
     }
 }

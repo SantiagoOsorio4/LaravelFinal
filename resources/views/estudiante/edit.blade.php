@@ -45,19 +45,6 @@
       <td>{{$estudiante->Num}}</td>
       <td>{{$estudiante->email}}</td>
       <td>
-      <form action="{{ route('estudiante.edit', $estudiante->id) }}" method="GET">
-      <button class="btn btn-warning btn-sm">
-        <span class="fas fa-user-edit">editar</span>
-      </button>
-    </form>
-  </td>
-  <td><form action="{{ route('estudiante.destroy', $estudiante->id) }}" method="POST" >
-    @csrf 
-    @method('DELETE')
-      <button class="btn btn-danger btn-sm">
-        <span class="fas fa-user-edit">Eliminar</span>
-      </button>
-    </form></td>
   </td>
     </tr>
     @endforeach
