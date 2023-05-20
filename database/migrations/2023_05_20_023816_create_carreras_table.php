@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('carreras', function (Blueprint $table) {
             $table->id();
+            $table->string('Nom_Car');
+            $table->string('description');
+            $table->unsignedBigInteger('estudiante_id');
+            $table->foreign('estudiante_id')->references('id')->on('estudiantes')->onDelete('cascade');
             $table->timestamps();
         });
     }
