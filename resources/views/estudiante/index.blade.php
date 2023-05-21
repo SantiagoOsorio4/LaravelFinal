@@ -19,18 +19,13 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                <div class="mb-3">
-                    <a href="{{ route('estudiante.create') }}"
-                        class="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded ml-2">Registrarse</a>
-                        </div>
                         <div class="mb-3"></div>
                     <table class="table">
                         <thead>
                             <tr>
-      <th scope="col">Id</th>
       <th scope="col">Name</th>
       <th scope="col">last name</th>
-      <th scope="col">carrera_id</th>
+      <th scope="col">Nombre de la carrera</th>
       <th scope="col">Numero</th>
       <th scope="col">email</th>
     </tr>
@@ -38,18 +33,12 @@
   <tbody>
   @foreach ($estudiantes as $estudiante)
     <tr>
-      <th scope="row">{{$estudiante->id}}</th>
       <td>{{$estudiante->name}}</td>
       <td>{{$estudiante->last_name}}</td>
       <td>{{$estudiante->carrera->Nom_Car}}</td>
       <td>{{$estudiante->Num}}</td>
       <td>{{$estudiante->email}}</td>
       <td>
-      <form action="{{ route('estudiante.edit', $estudiante->id) }}" method="GET">
-      <button class="btn btn-warning btn-sm">
-        <span class="fas fa-user-edit">editar</span>
-      </button>
-    </form>
   </td>
   <td><form action="{{ route('estudiante.destroy', $estudiante->id) }}" method="POST" >
     @csrf 
